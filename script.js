@@ -69,10 +69,6 @@ window.addEventListener('touchstart', e=>{
 
 window.addEventListener('touchend', e=>{
     let endX = e.changedTouches[0].screenX;
-
-    if(endX - startX > 80){
-        history.back();
-    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -225,6 +221,32 @@ tombolFilter.forEach(function(tombol) {
 
 // 10. INISIALISASI — Jalankan semua fungsi saat halaman siap
 document.addEventListener('DOMContentLoaded', function() {
-    buatPartikel();          // Buat efek partikel latar belakang
-    navigasiKe('home');      // Mulai di halaman Home
+    buatPartikel();
+    navigasiKe('home');
+
+    // ===== MODAL FOTO =====
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.querySelector(".close-modal");
+    const images = document.querySelectorAll(".placeholder-gambar img");
+
+    images.forEach(img => {
+        img.addEventListener("click", function () {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    closeBtn.onclick = function () {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    };
+
+    modal.onclick = function (e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    };
 });
