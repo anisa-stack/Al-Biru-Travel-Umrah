@@ -30,6 +30,7 @@
 
 html {
     scroll-behavior: smooth;
+    overscroll-behavior-x: none;
 }
 
 body {
@@ -39,6 +40,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     line-height: 1.6;
+    touch-action: pan-y;
 }
 
 a {
@@ -610,8 +612,6 @@ a {
 }
 
 .instagram .ikon-media { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: #fff; }
-.facebook .ikon-media { background: linear-gradient(135deg, #1877f2, #1565c0); color: #fff; }
-.twitter .ikon-media { background: linear-gradient(135deg, #1da1f2, #0077b5); color: #fff; }
 .whatsapp .ikon-media { background: linear-gradient(135deg, #25d366, #128b55); color: #fff; }
 
 .info-media {
@@ -1087,6 +1087,30 @@ a {
 .tombol-ke-atas:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 28px rgba(59, 130, 246, 0.5);
+}
+
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
 }
 
 /* ============================================================
