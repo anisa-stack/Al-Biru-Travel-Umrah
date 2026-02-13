@@ -946,7 +946,6 @@ a {
 }
 
 .kartu-foto {
-    border-radius: var(--radius-kartu);
     overflow: hidden;
     border: 1px solid rgba(59, 130, 246, 0.12);
     transition: var(--transisi-halus);
@@ -1106,8 +1105,8 @@ a {
 
 .close-modal {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 2px;
+    right: 20px;
     font-size: 35px;
     color: white;
     cursor: pointer;
@@ -1166,6 +1165,30 @@ a {
     .masjid-bawah { height: 10%; width: 10%;}
 
     .kartu-paket { width: 90%; margin: auto;}
+
+    .overlay-foto {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 40px 11px 5px;
+        background: linear-gradient(to top, rgba(6, 14, 26, 0.85), transparent);
+        z-index: 2;
+    }
+
+    .overlay-foto h4 {
+        font-family: 'Cinzel', serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--putih);
+        margin-bottom: 2px;
+    }
+
+    .overlay-foto p {
+        font-size: 10px;
+        color: var(--biru-aksen-terang);
+        font-weight: 600;
+    }
 }
 
 @media (max-width: 480px) {
